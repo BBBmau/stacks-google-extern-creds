@@ -9,11 +9,15 @@ provider "google" "this" {
  
 }
 
+variable "jwt" {
+  type = string
+}
+
 component "storage_buckets" {
     source = "./buckets"
 
     inputs = {
-        jwt = identity_token.gcp.jwt
+        jwt = var.jwt
     }
 
     providers = {
