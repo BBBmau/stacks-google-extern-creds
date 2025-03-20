@@ -1,9 +1,9 @@
-identity_token "jwt" {
+identity_token "gcp" {
   audience = ["hcp.workload.identity"]
 }
 
 deployment "staging" {
   inputs = {
-    jwt = identity_token.jwt.jwt
+    identity_token = identity_token.gcp.jwt
   }
 }

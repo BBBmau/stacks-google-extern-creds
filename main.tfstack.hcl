@@ -28,11 +28,3 @@ component "storage_buckets" {
         google    = provider.google.this
     }
 }
-
-component "local_file" {
-  source = "./local_file"
-
-  providers = {
-    local_file = provider.local_file.this
-  }
-}
